@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import About from './Pages/About';
+import Templates from './Pages/Templates';
 import InvalidPage  from './Pages/InvalidPage';
 import { Navbar, Nav } from 'react-bootstrap';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -14,18 +15,19 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
     
-    <Navbar className="na" bg="dark" variant="dark" style={{ backgroundColor: "#282c34" }}>
+    <Navbar className="nav dark" bg="dark" variant="dark"  style={{ position: "fixed", top: 0, width: "100%" }}>
           <Navbar.Brand href="/">Mailo</Navbar.Brand>
           <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/templates">Templates</Nav.Link>
             <Nav.Link href="/about">About</Nav.Link>
+            
           </Nav>
     </Navbar>
     
     <Routes>
     <Route path="/" element={<App/>}/>
     <Route path="/about" element={<About/>}/>
-    
+    <Route path="/templates" element={<Templates/>}/>
     <Route path="*" element={<InvalidPage/>}/>
     </Routes>
     </BrowserRouter>

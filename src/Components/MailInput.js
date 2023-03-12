@@ -1,5 +1,6 @@
 
 import {useState} from 'react'
+// import './App.css';
 const MailInput = () => {
     const [rawMail,setMail] = useState("")
     const [response, setResponse] = useState('');
@@ -13,7 +14,7 @@ const MailInput = () => {
         setLoading(true);
         // sending request to the cohere API
         try {
-            const res = await fetch('http://localhost:8000/generate', {
+            const res = await fetch('http://localhost:8000/generate_mail', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
@@ -22,7 +23,7 @@ const MailInput = () => {
             });
             const data = await res.json();
             console.log(data)
-            setResponse(data.message);
+            setResponse(data);
             setMail(data.message);
             setLoading(false);
           } catch (error) {
@@ -37,14 +38,14 @@ const MailInput = () => {
 
     return <div>
         <form onSubmit={handleSubmit}>
-            <p>enter mail prompt to create your professional mail.</p>
+            <p>enter mail desscription to create your professional mail.</p>
             <br/>
-            <textarea rows="15" cols="100" onChange={(e) => setMail(e.target.value)} name="mail"></textarea>
+            <textarea placeholder="example: Create a mail to the hr apply for leave from monday to wednesday." rows="5" cols="30" onChange={(e) => setMail(e.target.value)} name="mail" required></textarea>
             <br/> <br/>
             <div  className="livebox">
             <p>{rawMail}</p>
             </div>
-            <button className="btn btn-success"  disabled={loading}>
+            <button className="theme-button"  disabled={loading}>
               {loading ? (
                 <>
                   <span className="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>

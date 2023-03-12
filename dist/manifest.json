@@ -1,0 +1,18 @@
+
+{
+  "manifest_version": 3,
+  "name": "MAILO",
+  "version": "0.2",
+  "description": "My awesome mail generation extension",
+  "author": "Sang",
+  "action":{
+      "default_popup": "popup.html",
+      "default_title": "Mailo"
+  },
+  "background": {
+    "service_worker": "./background.js"
+    },
+  "icons": { "16": "logo192.png", "128": "logo512.png" }
+}
+
+

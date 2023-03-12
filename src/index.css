@@ -4,7 +4,7 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* -moz-osx-font-smoothing: grayscale; */
 }
 
 code {
@@ -12,12 +12,13 @@ code {
     monospace;
 }
 
-.na {
+.nav {
   position: fixed;
   top: 0px;
   left: 0px;
+  padding-left: 20px;
   width: 100%;
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  color: grey;
+  color: black;
 }
