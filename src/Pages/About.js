@@ -3,7 +3,7 @@ const About = () => {
         <br/><br/>
         <h1>About</h1>
         <br/><br/>
-        <p>A one day project to help people save time in making long emails.
+        <p className="paragraph">A one day project to help people save time in making long emails.
         Introducing the innovative solution to save time while creating long emails - Mailo.
         With the increasing demands of daily communication, it can be time-consuming to craft a well-thought-out email.
         Our app offers a unique approach to simplify this task.

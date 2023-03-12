@@ -12,13 +12,17 @@ code {
     monospace;
 }
 
+.Navbar-brand {
+  padding-left: 20px;
+}
 .nav {
   position: fixed;
   top: 0px;
   left: 0px;
-  padding-left: 20px;
+  padding: 20px;
   width: 100%;
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
   color: black;
+  z-index: 999;
 }

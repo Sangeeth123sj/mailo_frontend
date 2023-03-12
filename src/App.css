@@ -11,7 +11,49 @@
   
 }
 
+.paragraph{
+  padding:100px;
+  padding-top:10px;
+  padding-bottom: 10px;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+}
 
+.theme-outline-button {
+  /* Rectangle 39933 button */
+  background-color: rgba(255, 255, 255, 0);
+  /* box-sizing: border-box; */
+  width: 128px;
+  height: 52px;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  /* box-shadow: 0 0 0 1px #3d46b3; */
+  border-color: #a9aee8;
+}
+
+.theme-button-small {
+  color: white;
+ padding-left: 9px;
+ padding-right: 9px;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 36px;
+  box-sizing: border-box;
+
+  
+
+  background: linear-gradient(
+    266.45deg,
+    #f990f7 -50.37%,
+    #4a86ef 102.5%,
+    #643eec 122.97%
+  );
+  /* border: 1px solid white; */
+  border-radius: 5px;
+}
 
 p {
   white-space: pre-line;

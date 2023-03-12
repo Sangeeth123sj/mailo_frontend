@@ -4,11 +4,21 @@ const MailInput = ({ mailDescription }) => {
   const [rawMail, setMail] = useState(mailDescription || '')
   const [response, setResponse] = useState('')
   const [loading, setLoading] = useState(false)
+  const [copied, setCopied] = useState(false);
+
+
+    const copyText = () => {
+      navigator.clipboard.writeText(rawMail);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    };
+
 
   useEffect(() => {
     const selectedTemplate = localStorage.getItem('selectedTemplate');
     if (selectedTemplate) {
-      setMail(selectedTemplate);
+      const formattedTemplate = selectedTemplate.replace(/([.,!])/g, '$1\n').replace(/Dear/g, '\n\nDear').replace(/Subject:/g, '\n\nSubject:');
+      setMail(formattedTemplate);
       localStorage.removeItem('selectedTemplate'); // clear the stored template after using it
     }
   }, []);
@@ -51,8 +61,8 @@ const MailInput = ({ mailDescription }) => {
         <br />
         <textarea
           placeholder="example: Create a mail to the hr apply for leave from monday to wednesday."
-          rows="5"
-          cols="30"
+          rows="10"
+          cols="20"
           onChange={(e) => setMail(e.target.value)}
           name="mail"
           value={rawMail}
@@ -60,7 +70,8 @@ const MailInput = ({ mailDescription }) => {
         ></textarea>
         <br /> <br />
         <div className="livebox">
-          <p>{rawMail}</p>
+        {rawMail && <button type='button' className="theme-outline-button" onClick={copyText}>{copied ? "Copied!" : "Copy"}</button>}
+          <p className="left-text">{rawMail}</p>
         </div>
         <button className="theme-button" disabled={loading}>
           {loading ? (

@@ -16,7 +16,7 @@ root.render(
     <BrowserRouter>
     
     <Navbar className="nav dark" bg="dark" variant="dark"  style={{ position: "fixed", top: 0, width: "100%" }}>
-          <Navbar.Brand href="/">Mailo</Navbar.Brand>
+          <Navbar.Brand className="Navbar-brand" href="/">Mailo</Navbar.Brand>
           <Nav className="mr-auto">
             <Nav.Link href="/templates">Templates</Nav.Link>
             <Nav.Link href="/about">About</Nav.Link>
