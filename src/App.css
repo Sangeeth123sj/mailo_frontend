@@ -61,9 +61,13 @@ p {
 }
 
 body{
-  background-color: #282c34;
+  background-image: linear-gradient(to bottom, #282c34, #4b4376);
+  background-attachment: fixed;
+  /* background-color: #282c34; */
 }
-
+html, body {
+  height: 100%;
+}
 h2, h1, p {
   color: white;
 }
